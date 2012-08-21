@@ -1,0 +1,13 @@
+--- src/server/game/Maps/Map.cpp
++++ src/server/game/Maps/Map.cpp
+@@ -173,8 +152,9 @@
+     // loading data
+     GridMaps[gx][gy] = new GridMap();
+     if (!GridMaps[gx][gy]->loadData(tmp))
++    {
+         sLog->outError("Error loading map file: \n %s\n", tmp);
+-
++    }
+     delete [] tmp;
+ 
+     sScriptMgr->OnLoadGridMap(this, GridMaps[gx][gy], gx, gy);

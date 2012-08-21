@@ -1,0 +1,80 @@
+Only in src/: CMakeLists.txt
+Only in src/: genrev
+Only in src//server: authserver
+Only in src//server: CMakeLists.txt
+Only in src//server: collision
+Only in src//server/game: Accounts
+Only in src//server/game: Achievements
+Only in src//server/game: Addons
+Only in src//server/game: AI
+Only in src//server/game: AuctionHouse
+Only in src//server/game: Battlegrounds
+Only in src//server/game: Calendar
+Only in src//server/game: Chat
+Only in src//server/game: CMakeLists.txt
+Only in src//server/game: Combat
+Only in src//server/game: Conditions
+Only in src//server/game: DataStores
+Only in src//server/game: DungeonFinding
+Only in src//server/game: Entities
+Only in src//server/game: Events
+Only in src//server/game: Globals
+Only in src//server/game: Grids
+Only in src//server/game: Groups
+Only in src//server/game: Guilds
+Only in src//server/game: Handlers
+Only in src//server/game: Instances
+Only in src//server/game: Loot
+Only in src//server/game: Mails
+Only in src//server/game: Maps
+Only in src//server/game: Miscellaneous
+Only in src//server/game: Movement
+Only in src//server/game: OutdoorPvP
+Only in src//server/game: Pools
+Only in src//server/game: PrecompiledHeaders
+Only in src//server/game: Quests
+Only in src//server/game: Reputation
+Only in src//server/game: Scripting
+Only in src//server/game: Server
+Only in src//server/game: Skills
+Only in src//server/game/Spells: Auras
+diff -crB src//server/game/Spells/Spell.cpp new_src//server/game/Spells/Spell.cpp
+*** src//server/game/Spells/Spell.cpp	2012-08-20 13:50:26.000000000 +0300
+--- new_src//server/game/Spells/Spell.cpp	2012-08-20 13:50:06.000000000 +0300
+***************
+*** 5443,5449 ****
+                  if (m_originalCaster && m_originalCaster->GetTypeId() == TYPEID_PLAYER && m_originalCaster->isAlive())
+                  {
+                      if (AreaTableEntry const* pArea = GetAreaEntryByAreaID(m_originalCaster->GetAreaId()))
+!                         if (pArea->flags & AREA_FLAG_NO_FLY_ZONE)
+                              return (_triggeredCastFlags & TRIGGERED_DONT_REPORT_CAST_ERROR) ? SPELL_FAILED_DONT_REPORT : SPELL_FAILED_NOT_HERE;
+                  }
+                  break;
+--- 5443,5450 ----
+                  if (m_originalCaster && m_originalCaster->GetTypeId() == TYPEID_PLAYER && m_originalCaster->isAlive())
+                  {
+                      if (AreaTableEntry const* pArea = GetAreaEntryByAreaID(m_originalCaster->GetAreaId()))
+!                           if (pArea->flags)
+!                 //        if (pArea->flags & AREA_FLAG_NO_FLY_ZONE)
+                              return (_triggeredCastFlags & TRIGGERED_DONT_REPORT_CAST_ERROR) ? SPELL_FAILED_DONT_REPORT : SPELL_FAILED_NOT_HERE;
+                  }
+                  break;
+Only in src//server/game/Spells: spell.cpp.patch
+Only in src//server/game/Spells: SpellEffects.cpp
+Only in src//server/game/Spells: Spell.h
+Only in src//server/game/Spells: SpellInfo.cpp
+Only in src//server/game/Spells: SpellInfo.h
+Only in src//server/game/Spells: SpellMgr.cpp
+Only in src//server/game/Spells: SpellMgr.h
+Only in src//server/game/Spells: SpellScript.cpp
+Only in src//server/game/Spells: SpellScript.h
+Only in src//server/game: Texts
+Only in src//server/game: Tickets
+Only in src//server/game: Tools
+Only in src//server/game: Warden
+Only in src//server/game: Weather
+Only in src//server/game: World
+Only in src//server: scripts
+Only in src//server: shared
+Only in src//server: worldserver
+Only in src/: tools

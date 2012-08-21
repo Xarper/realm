@@ -1,0 +1,35 @@
+--- src/server/scripts/Commands/cs_disable.cpp
++++ src/server/scripts/Commands/cs_disable.cpp
+@@ -43,7 +43,6 @@
+             { "achievement_criteria", SEC_GAMEMASTER, false, &HandleDisableAchievementCriteriaCommand, "", NULL },
+             { "outdoorpvp",     SEC_GAMEMASTER,     false, &HandleDisableOutdoorPvPCommand,    "", NULL },
+             { "vmap",           SEC_GAMEMASTER,     false, &HandleDisableVmapCommand,          "", NULL },
+-            { "mmap,            SEC_GAMEMASTER,     false, &HandleDisableMMapCommand,          "", NULL },
+             { NULL,             0,                  false, NULL,                               "", NULL }
+         };
+  
+@@ -84,6 +83,8 @@
+         uint32 entry = (uint32)atoi(cEntry);
+         uint8 flags = atoi(cFlags);
+  
++       
++ 
+         std::string disableTypeStr = "";
+  
+         switch (disableType)
+@@ -185,15 +183,6 @@
+         HandleDisables(handler, args, DISABLE_TYPE_VMAP);
+         return true;
+     }
+-
+-    static bool HandleDisableMMapCommand(ChatHandler* handler, char const* args)
+-    {
+-        if (!*args)
+-            return false;
+-       
+-        HandleDisables(handler, args, DISABLE_TYPE_MMAP);
+-        return true;
+-    }
+  
+ };
+  
